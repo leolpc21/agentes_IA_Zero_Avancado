@@ -1,0 +1,182 @@
+========================================
+COMANDOS BÁSICOS DO GIT
+========================================
+
+1. INICIALIZAR UM REPOSITÓRIO GIT
+========================================
+Comando: git init
+Descrição: Cria um novo repositório Git vazio no diretório atual.
+Exemplo:
+  cd meu_projeto
+  git init
+
+
+2. CONFIGURAR DADOS DO USUÁRIO
+========================================
+Comando: git config --global user.name "Seu Nome"
+Comando: git config --global user.email "seu.email@exemplo.com"
+Descrição: Define o nome e email que serão usados em todos os commits.
+Exemplo:
+  git config --global user.name "João Silva"
+  git config --global user.email "joao@exemplo.com"
+
+
+3. CRIAR ARQUIVO .GITIGNORE
+========================================
+Descrição: Arquivo que define quais arquivos/pastas não devem ser versionados.
+Arquivo: .gitignore (criar na raiz do projeto)
+Conteúdo comum:
+  .venv/
+  __pycache__/
+  *.pyc
+  .ipynb_checkpoints/
+  .env
+  node_modules/
+  .DS_Store
+
+
+4. ADICIONAR ARQUIVOS PARA VERSIONAMENTO
+========================================
+Comando: git add <arquivo>
+Descrição: Adiciona um arquivo específico para ser commitado.
+Exemplo:
+  git add exemplo.py
+  git add .  (adiciona todos os arquivos modificados)
+
+
+5. VERIFICAR STATUS DOS ARQUIVOS
+========================================
+Comando: git status
+Descrição: Mostra quais arquivos foram modificados, adicionados ou deletados.
+Exemplo:
+  git status
+
+
+6. COMITAR MUDANÇAS
+========================================
+Comando: git commit -m "mensagem do commit"
+Descrição: Salva as mudanças no repositório local com uma mensagem descritiva.
+Exemplo:
+  git commit -m "Adiciona exemplo.py com Hello World"
+
+
+7. VER HISTÓRICO DE COMMITS
+========================================
+Comando: git log
+Descrição: Mostra o histórico de todos os commits realizados.
+Exemplo:
+  git log
+  git log --oneline  (versão resumida)
+
+
+8. CRIAR UMA BRANCH
+========================================
+Comando: git branch <nome_branch>
+Descrição: Cria uma nova branch para trabalhar em paralelo.
+Exemplo:
+  git branch feature/nova-funcionalidade
+
+
+9. MUDAR DE BRANCH
+========================================
+Comando: git checkout <nome_branch>
+Descrição: Alterna para uma branch existente.
+Exemplo:
+  git checkout main
+  git checkout -b feature/nova  (cria e muda para nova branch)
+
+
+10. ENVIAR PARA REPOSITÓRIO REMOTO (GITHUB)
+========================================
+Comando: git remote add origin <url_do_repositorio>
+Descrição: Vincula o repositório local ao repositório remoto no GitHub.
+Exemplo:
+  git remote add origin https://github.com/usuario/meu_projeto.git
+
+Comando: git push -u origin <nome_branch>
+Descrição: Envia os commits da branch para o GitHub.
+Exemplo:
+  git push -u origin main
+  git push -u origin feature/nova-funcionalidade
+
+
+11. BAIXAR ATUALIZAÇÕES DO REPOSITÓRIO REMOTO
+========================================
+Comando: git pull
+Descrição: Baixa e integra as mudanças do repositório remoto.
+Exemplo:
+  git pull origin main
+
+
+12. CRIAR UM REPOSITÓRIO NO GITHUB
+========================================
+Passos:
+  1. Acesse https://github.com
+  2. Faça login com sua conta
+  3. Clique em "+" (canto superior direito) > "New repository"
+  4. Preencha:
+     - Repository name: nome do seu projeto
+     - Description: descrição (opcional)
+     - Public ou Private
+  5. Clique em "Create repository"
+  6. Copie a URL do repositório
+
+
+13. VINCULAR CONTA GITHUB
+========================================
+Opção 1 - HTTPS (mais simples):
+  Usa seu email e um token pessoal (ou senha)
+  git clone https://github.com/usuario/repositorio.git
+
+Opção 2 - SSH (mais seguro):
+  1. Gere uma chave SSH:
+     ssh-keygen -t ed25519 -C "seu.email@exemplo.com"
+  2. Adicione a chave pública ao GitHub:
+     - Vá em Settings > SSH and GPG keys
+     - Clique em "New SSH key"
+     - Cole o conteúdo da chave pública (~/.ssh/id_ed25519.pub)
+
+
+14. FLUXO COMPLETO DE TRABALHO
+========================================
+1. Criar repositório local:
+   git init
+
+2. Configurar usuário:
+   git config --global user.name "Seu Nome"
+   git config --global user.email "seu.email@exemplo.com"
+
+3. Criar arquivo .gitignore
+
+4. Adicionar arquivos:
+   git add .
+
+5. Primeiro commit:
+   git commit -m "Commit inicial"
+
+6. Criar repositório no GitHub
+
+7. Vincular repositório remoto:
+   git remote add origin https://github.com/usuario/repositorio.git
+
+8. Enviar para GitHub:
+   git push -u origin main
+
+9. Trabalhar em novas funcionalidades:
+   git checkout -b feature/nova-funcionalidade
+   (fazer mudanças)
+   git add .
+   git commit -m "Descrição das mudanças"
+   git push -u origin feature/nova-funcionalidade
+
+10. Fazer Pull Request no GitHub para mesclar com main
+
+
+========================================
+DICAS IMPORTANTES
+========================================
+- Use mensagens de commit descritivas
+- Faça commits frequentes com mudanças lógicas
+- Sempre use branches para novas funcionalidades
+- Revise o status antes de fazer commit
+- Nunca faça commit de arquivos sensíveis (.env, senhas, etc.)
