@@ -1,0 +1,34 @@
+executar arquivo: 
+  python "nome_arquivo".py
+  ex: 
+    teste.py
+    comando: python teste.py
+
+arquivos .ipynb são usados para executar os codigos na hora e ter uma resposta rapida.
+
+pip - comando para gerenciar os pacotes de instalação de bibliotecas
+
+instalar uma versão específica, usa o sinal == 
+  Ex: 
+    pip install dash==2.18.0
+
+ativar biblioteca local (projeto)
+  bash: source "caminho activate script"
+    Ex:
+      source .venv/Scripts/activate
+  CMD: "caminho activate script"
+    Ex:
+      .venv/Scripts/activate
+
+Listar todas as bibliotecas com as versões
+  pip freeze
+
+Criar arquivo com as bibliotecas
+  pip freeze > "nome arquivo"
+    Ex:
+      pip freeze > requirements.txt
+
+Instalar todas as biblotecas de projeto
+  pip install -r "nome arquivo biblioteca"
+    Ex:
+      pip install -r requirements.txt
