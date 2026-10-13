@@ -1,3 +1,17 @@
+verificar se python instalado e sua versão
+  python --version
+
+imprimir valor/mensagem no terminal
+  print("")
+
+comentários
+  # unica linha
+
+  """
+  multiplas 
+  linhas
+  """
+
 executar arquivo: 
   python "nome_arquivo".py
   ex: 
